@@ -33,7 +33,7 @@ class Graph
      */
     public function import()
     {
-        $words = file('words.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $words = file('test.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         if (!empty($words)) {
             foreach ($words as $word) {
@@ -146,8 +146,8 @@ class Graph
     }
 }
 $graph = new Graph();
-$r = $graph->getShortestPath('lead', 'gold');
-if (!emtpy($r)) {
+$r = $graph->getShortestPath('cat', 'dog');
+if (!empty($r)) {
     foreach ($r as $v) {
         echo $v;
         echo "<br>";
