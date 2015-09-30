@@ -1,0 +1,7 @@
+cat
+cot
+cog
+dog
+hat
+hot
+slot
