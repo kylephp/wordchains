@@ -11,8 +11,8 @@ To solve this puzzle, we simply have to find the "adjacent words" of the given s
 ####1. What are the "adjacent words"?
 
 Word A is adjacent to word B only if:
-*They have the same length
-*They are one letter apart
+* They have the same length
+* They are one letter apart
 
 For example: `cat` is adjacent to `cot` since they are both 3-letter words and just one letter apart (`a` vs `o`)
 
