@@ -1,6 +1,6 @@
 <?php
 
-namespace Kyle\WordChain;
+namespace Kyle\WordChains;
 
 use Everyman\Neo4j\Client       as Database;
 use Everyman\Neo4j\Index\NodeFulltextIndex       as NodeFulltextIndex;
