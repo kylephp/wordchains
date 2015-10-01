@@ -14,6 +14,7 @@ echo PHP_EOL;
 $importer->import();
 echo 'Processing on adjacent words...';
 echo PHP_EOL;
+$importer->processAdjacentWords();
 $delta = microtime(true) - $t;
 echo sprintf('Done! (%ss)', round($delta, 2));
 exit;
