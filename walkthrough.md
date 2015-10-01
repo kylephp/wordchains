@@ -21,8 +21,8 @@ For example: `cat` is adjacent to `cot` since they are both 3-letter words and j
 First, we use the dictionary from here: http://www.ibiblio.org/webster/
 They are in XML format, we have to parse and store them in a graph which is usually used to solve the Least Number of Hops and Shortest-Path problems.
 
-In this case, it's a unweighted graph in which a node is considered as a word.
-file:///home/kyle/Desktop/dg-graphs01.png
+In this case, it's a unweighted graph in which a node is considered as a word:
+<img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/07/dg-graphs01.png" alt="">
 
 ```
 <?php
