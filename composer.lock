@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c79900b38e84a9661c1b82eb59329ef9",
+    "hash": "089f59cd9681240fc2a1ab72d4f75d14",
+    "content-hash": "b45e106797b3d5067a8c789ede4c253f",
     "packages": [
         {
             "name": "everyman/neo4jphp",

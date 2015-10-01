@@ -2,31 +2,12 @@
 
 namespace Kyle\WordChain;
 
-require("../vendor/autoload.php");
-
 use Everyman\Neo4j\Client       as Database;
 use Everyman\Neo4j\Index\NodeFulltextIndex       as NodeFulltextIndex;
 use Everyman\Neo4j\Cypher\Query as Query;
 
 class Graph
 {
-    /**
-     * Array of word chains relation
-     *
-     * @var  array
-     */
-    protected $graph;
-    /**
-     * Array to track the node visited or not
-     *
-     * @var  array
-     */
-    protected $visited;
-    /**
-     * Neo4j Client Object
-     *
-     * @var  Neo4j\Client
-     */
     protected $db;
     /**
      * Neo4j Index Object
@@ -43,10 +24,10 @@ class Graph
     {
         $this->db = new Database;
         $this->index = new NodeFulltextIndex($this->db, 'words');
-        $this->index->save();
-        $this->setWords(array());
-        $this->import();
-        $this->processAdjacentWords();
+        // $this->index->save();
+        // $this->setWords(array());
+        // $this->import();
+        // $this->processAdjacentWords();
     }
 
     /**
@@ -304,5 +285,5 @@ EOHD
     }
 }
 $graph = new Graph();
-$r = $graph->getShortestPaths('cat', 'dog');
+$r = $graph->getShortestPaths('star', 'stop');
 var_dump($r);
