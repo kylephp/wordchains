@@ -40,8 +40,8 @@ $graph = array(
 ?>
 ```
 That's my very first basic idea to store a graph when I reached here. However, using a variable to store a graph is not a good idea due to the fact:
-* We cannot stor it pernamently
-* We will get a performance issue when we process on the list of thousands words
+* We cannot store it pernamently.
+* We will get a performance issue when we process on the list of thousands words.
 So, a graph database is the best appoach here. Luckily, we have: [Neo4j - a powerful graph database](http://neo4j.com/whats-new-in-neo4j-2-2/) which allows us to build relationships between nodes, so we can do something like this:
 ```
 $wordA->relateTo($wordB, 'IS_ADJACENT_TO');
