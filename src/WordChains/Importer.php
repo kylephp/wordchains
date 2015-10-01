@@ -88,7 +88,7 @@ EOHD
         $words = array();
 
         foreach ($files as $file) {
-            $content = @file_get_contents($file);
+            $content = @file_get_contents(__DIR__ . '/' .$file);
 
             if (!empty($content)) {
                 if (preg_match_all("/<hw>(.*?)<\/hw>/", $content, $matches)) {
