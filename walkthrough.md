@@ -18,12 +18,15 @@ For example: `cat` is adjacent to `cot` since they are both 3-letter words and j
 
 ####2. Data structure:
 
-First, we use the dictionary from here: http://www.ibiblio.org/webster/
-They are in XML format, we have to parse and store them in a graph which is usually used to solve the Least Number of Hops and Shortest-Path problems.
+First, we use the dictionary from here: http://www.ibiblio.org/webster/. They are in XML format, we have to parse and store them in a graph which is usually used to solve the Least Number of Hops and Shortest-Path problems.
 
 In this case, it's a unweighted graph in which a node is considered as a word:
 <img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/07/dg-graphs01.png" alt="">
 
+We can represent a graph by using an adjacency list. The above graph represented as an adjacency list looks like this:
+<img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/07/dg-graphs02.png" alt="">
+
+So, we can say word A is adjacent to word B and vice versa. And the `$graph` variable should be like this:
 ```
 <?php
 $graph = array(
@@ -34,4 +37,18 @@ $graph = array(
   'E' => array('B', 'D', 'F'),
   'F' => array('A', 'E', 'C'),
 );
+?>
+```
+That's my very first basic idea to store a graph when I reached here. However, using a variable to store a graph is not a good idea due to the fact:
+* We cannot stor it pernamently
+* We will get a performance issue when we process on the list of thousands words
+So, a graph database is the best appoach here. Luckily, we have: [Neo4j - a powerful graph database](http://neo4j.com/whats-new-in-neo4j-2-2/) which allows us to build relationships between nodes, so we can do something like this:
+```
+$wordA->relateTo($wordB, 'IS_ADJACENT_TO');
+```
+So, it's easy to build a graph with Neo4j and once we finish with data relationships storing, we can use [Cypher](http://neo4j.com/docs/stable/cypher-query-lang.html) query which is built to work with Neo4j to find all the shortest paths from A to B:
+```
+START a=node:words(word=A), b=node:words(word=B)
+MATCH p=allshortestPaths((a)-[:IS_ADJACENT_TO*]->(b))
+RETURN p;
 ```
