@@ -1,8 +1,8 @@
-#Requirements:
+###Requirements:
 * [Neo4j server](http://neo4j.com/download/)
 * [Composer](https://getcomposer.org/doc/00-intro.md#globally)
 
-#Instructions:
+###Instructions:
 1. Start neo4j server:
   * Extract neo4j-server.zip
   * Run: `./neo4j-server/bin/neo4j start`
