@@ -16,10 +16,11 @@ $b = $argv[2];
 
 echo 'Processing...';
 echo PHP_EOL;
+$t = microtime(true);
 $chains = $graph->getShortestPaths($a, $b);
-
+$delta = microtime(true) - $t;
 if (empty($chains)) {
-	echo 'No chain found';
+	echo 'No chain found!';
 	exit;
 }
 
@@ -29,4 +30,5 @@ foreach ($chains as $chain) {
 	echo implode(' -> ', $chain);
 	echo PHP_EOL;
 }
+echo sprintf('Done! (%ss)', round($delta, 2));
 exit;
