@@ -1,0 +1,32 @@
+#!/usr/bin/php
+<?php
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+if (!(isset($argv[1]) && isset($argv[2]))) {
+    echo 'Please provide start and end words';
+    echo "\n";
+    exit;
+}
+
+$graph = new WordChains\Graph();
+
+$a = $argv[1];
+$b = $argv[2];
+
+echo 'Processing...';
+echo PHP_EOL;
+$chains = $graph->getShortestPaths($a, $b);
+
+if (empty($chains)) {
+	echo 'No chain found';
+	exit;
+}
+
+echo sprintf('%s shortest chain(s) found:', count($chains));
+echo PHP_EOL;
+foreach ($chains as $chain) {
+	echo implode(' -> ', $chain);
+	echo PHP_EOL;
+}
+exit;

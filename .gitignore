@@ -51,4 +51,5 @@ tests/vendor
 !index.html
 !index.php
 tests/_output/*
+neo4j-server/*
 

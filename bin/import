@@ -1,0 +1,15 @@
+#!/usr/bin/php
+<?php
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+$importer = new WordChains\Importer();
+$importer->reset();
+echo 'Importing words from xml files...';
+echo PHP_EOL;
+$importer->import();
+echo 'Processing on adjacent words...';
+echo PHP_EOL;
+$importer->processAdjacentWords();
+echo 'Finished!';
+exit;

@@ -3,6 +3,6 @@
         "everyman/neo4jphp": "dev-master"
     },
     "autoload": {
-        "psr-0": {"": "src"}
+        "psr-0": {"": ["src/"]}
     }
 }
