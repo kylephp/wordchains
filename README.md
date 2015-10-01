@@ -10,3 +10,5 @@
 3. To import words to graph database, run:`./bin/import` (you can skip this step if you download `neo4j-server.zip` on this repo because it's fully imported)
 4. To use cli application, run:`./bin/getchain wordA wordB`
 5. Run test suite: `phpunit tests`
+
+###You can get more details about my work on this project [here](walkthrough.md)
